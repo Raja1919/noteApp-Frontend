@@ -15,7 +15,7 @@ const Login = ({ setIsLogin }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://noteapp-backend-ib5u.onrender.com/user/signup",
+        "https://noteapp-backend-ib5u.onrender.com/api/user/signup",
         {
           name: user.name,
           email: user.email,
@@ -34,7 +34,7 @@ const Login = ({ setIsLogin }) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "https://noteapp-backend-ib5u.onrender.com/user/login",
+        "https://noteapp-backend-ib5u.onrender.com/api/user/login",
         {
           email: user.email,
           password: user.password,

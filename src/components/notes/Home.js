@@ -7,7 +7,7 @@ const Home = () => {
   const [token, setToken] = useState("");
 
   const getNotes = async (token) => {
-    const response = await axios.get("https://noteapp-backend-ib5u.onrender.com/notes/get", {
+    const response = await axios.get("https://noteapp-backend-ib5u.onrender.com/api/notes/get", {
       headers: { "x-auth-token": token },
     });
     setNotes(response.data);
@@ -24,7 +24,7 @@ const Home = () => {
   const deleteNote = async (id) => {
     try {
       if (token && id) {
-        await axios.delete(`https://noteapp-backend-ib5u.onrender.com/notes/delete/${id}`, {
+        await axios.delete(`https://noteapp-backend-ib5u.onrender.com/api/notes/delete/${id}`, {
           headers: { "x-auth-token": token },
         });
         getNotes(token);

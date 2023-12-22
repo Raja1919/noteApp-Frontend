@@ -16,7 +16,7 @@ const Edit = () => {
       if (note_Id) {
         try {
           const res = await axios.get(
-            `https://noteapp-backend-ib5u.onrender.com/notes/get/${note_Id}`,
+            `https://noteapp-backend-ib5u.onrender.com/api/notes/get/${note_Id}`,
             {
               headers: { "x-auth-token": token },
             }
@@ -58,7 +58,7 @@ const Edit = () => {
         };
 
         await axios.put(
-          `https://noteapp-backend-ib5u.onrender.com/notes/update/${id}`,
+          `https://noteapp-backend-ib5u.onrender.com/api/notes/update/${id}`,
           newNote,
           {
             headers: { "x-auth-token": token },
