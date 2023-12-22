@@ -14,11 +14,14 @@ const Login = ({ setIsLogin }) => {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:9000/api/user/signup", {
-        name: user.name,
-        email: user.email,
-        password: user.password,
-      });
+      const res = await axios.post(
+        "https://noteapp-backend-ib5u.onrender.com/user/signup",
+        {
+          name: user.name,
+          email: user.email,
+          password: user.password,
+        }
+      );
       setUser({ name: "", email: "", password: "" });
       setErr(res.data.message);
       setOnLogin(false);
@@ -30,10 +33,13 @@ const Login = ({ setIsLogin }) => {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:9000/api/user/login", {
-        email: user.email,
-        password: user.password,
-      });
+      const res = await axios.post(
+        "https://noteapp-backend-ib5u.onrender.com/user/login",
+        {
+          email: user.email,
+          password: user.password,
+        }
+      );
       setUser({ name: "", email: "", password: "" });
       localStorage.setItem("tokenStore", res.data.token);
       setIsLogin(true);

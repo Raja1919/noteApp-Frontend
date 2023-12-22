@@ -39,7 +39,7 @@ const CreateNote = () => {
         };
 
         const response = await axios.post(
-          "http://localhost:9000/api/notes/post",
+          "https://noteapp-backend-ib5u.onrender.com/notes/post",
           newNote,
           {
             headers: { "x-auth-token": token },
