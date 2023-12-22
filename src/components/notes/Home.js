@@ -20,10 +20,11 @@ const Home = () => {
       getNotes(token);
     }
   }, []);
+
   const deleteNote = async (id) => {
     try {
       if (token && id) {
-        await axios.delete(`http://localhost:9000/api/notes/${id}`, {
+        await axios.delete(`http://localhost:9000/api/notes/delete/${id}`, {
           headers: { "x-auth-token": token },
         });
         getNotes(token);
